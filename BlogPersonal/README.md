@@ -1,6 +1,6 @@
 # BlogPersonal
 
-> Una plataforma moderna de blogging con sistema de comentarios, control de roles y moderación de contenido
+> Una plataforma moderna tipo blog con sistema de comentarios, control de roles y moderación de contenido
 
 [![PHP](https://img.shields.io/badge/PHP-8.0%2B-777BB4?logo=php&logoColor=white)](https://php.net)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0%2B-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
@@ -411,6 +411,7 @@ if (!empty($encontradas)) {
 
 
 </div>
+
 
 
 
