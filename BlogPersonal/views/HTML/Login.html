@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="../CSS/Login.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+</head>
+
+<body>
+  <div class="box">
+    <div class="login">
+      <div class="loginBx">
+        <h2>
+          <i class="fa-solid fa-right-to-bracket"></i>
+          Login
+          <i class="fa-solid fa-heart"></i>
+        </h2>
+        <form method="POST" action="../../Controllers/UserController.php">
+          <input type="text" name="nombre" placeholder="Usuario" required>
+          <input type="password" name="password" placeholder="Contraseña" required>
+          <input type="submit" name="action" value="login" />
+        </form>
+        <div class="group">
+          <a href="Registro.html">Crear cuenta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../JavaScript/auth.js"></script>
+</body>
+
+</html>

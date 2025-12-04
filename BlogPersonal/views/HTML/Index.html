@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Personal</title>
+  <!-- Hoja de estilos activa (por defecto Neón) -->
+  <link id="themeStylesheet" rel="stylesheet" href="../CSS/Index-neon.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Bienvenido al Blog</h1>
+
+    <!-- Botones principales -->
+    <div class="menu-buttons">
+      <button id="btnCrear" class="btn">Crear Post</button>
+      <button id="btnBuscar" class="btn">Buscar Posts</button>
+      <button id="btnPerfil" class="btn">Ver Mis Posts</button>
+      <button id="btnTodosPosts" class="btn hidden-btn">Ver Todos los Posts</button>
+      <button id="btnCensura" class="btn hidden-btn">Censura</button>
+      <button id="btnConfig" class="btn">Configuración / Datos</button>
+    </div>
+
+    <!-- Sección: Crear post -->
+    <div id="crearSection" class="section hidden">
+      <h2>Crear un nuevo post</h2>
+      <form id="postForm">
+        <input type="hidden" name="action" value="crear_post">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="contenido">Contenido:</label>
+        <textarea id="contenido" name="contenido" required></textarea>
+
+        <button type="submit" class="btn">Publicar</button>
+      </form>
+      <div id="alertContainer"></div>
+    </div>
+
+    <!-- Sección: Buscar posts -->
+    <div id="buscarSection" class="section hidden">
+      <h2>Buscar posts de otros usuarios</h2>
+      <form id="searchForm">
+        <input type="hidden" name="action" value="buscar_post">
+
+        <label for="usuario">Nombre de usuario:</label>
+        <input type="text" id="usuario" name="usuario" required>
+
+        <button type="submit" class="btn">Buscar</button>
+      </form>
+      <div id="searchResults"></div>
+    </div>
+
+    <!-- Sección: Mis posts -->
+    <div id="perfilSection" class="section hidden">
+      <h2>Mis posts</h2>
+      <div id="perfilPosts"></div>
+    </div>
+
+    <!-- Template de comentarios (oculto, se clona en JS) -->
+    <template id="commentsTemplate">
+      <div class="comments-section">
+        <div class="comments-header">
+          <span class="comments-toggle">▶</span>
+          <span class="comments-title">Comentarios</span>
+        </div>
+
+        <div class="comments-container hidden">
+          <!-- Comentarios existentes aquí -->
+          <div class="comments-list"></div>
+
+          <!-- Formulario para nuevo comentario -->
+          <div class="new-comment-form">
+            <textarea placeholder="Escribe un comentario..." class="comment-input"></textarea>
+            <button class="btn btn-small">Comentar</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- Sección: Todos los posts (solo para admin) -->
+    <div id="todosPostsSection" class="section hidden">
+      <h2>Todos los Posts</h2>
+      <p>Últimos posts de todos los usuarios:</p>
+      <div id="todosPostsList"></div>
+    </div>
+
+    <!-- Sección: Censura (solo para admin) -->
+    <div id="censuraSection" class="section hidden">
+      <h2>Administración de Censura</h2>
+
+      <div id="censuraAlerts"></div>
+
+      <div class="censura-add-section">
+        <h3>Agregar Palabra Prohibida</h3>
+        <div class="censura-input-group">
+          <input type="text" id="nuevaPalabraCensura" placeholder="Escribe una palabra a censurar..." />
+          <button onclick="agregarPalabraCensura()" class="btn">Agregar</button>
+        </div>
+      </div>
+
+      <div class="censura-list-section">
+        <h3>Palabras Prohibidas Actuales</h3>
+        <p><strong>Total de palabras:</strong> <span id="totalPalabrasCensura">0</span></p>
+        <div id="palabrasListCensura" class="palabras-grid">
+          <div class="loading-text">Cargando palabras...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección: Configuración / Datos -->
+    <div id="configSection" class="section hidden">
+      <h2>Mis Datos</h2>
+      <div id="perfilInfo" class="perfil-info">
+        <!-- JS insertará aquí los datos del usuario -->
+      </div>
+
+      <h3>Cambiar Tema</h3>
+      <select id="themeSelector">
+        <option value="../CSS/Index-neon.css">Neón</option>
+        <option value="../CSS/Index-business.css">Empresarial</option>
+      </select>
+
+      <h3>Opciones de Sesión</h3>
+      <button id="btnLogout" class="btn btn-logout">Cerrar Sesión</button>
+    </div>
+  </div>
+
+  <script src="../JavaScript/index.js"></script>
+</body>
+
+
+</html>

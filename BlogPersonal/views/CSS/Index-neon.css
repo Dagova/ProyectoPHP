@@ -1,0 +1,364 @@
+/* Fuente y colores base */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #000000, #1a1a1a, #2c2c2c);
+  /* degradado oscuro */
+  color: #e7e9ea;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor principal con efecto glow */
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 16px;
+  border: 1px solid #2f3336;
+  box-shadow: 0 0 25px #45f3ff, 0 0 25px #ff2770;
+  /* glow azul-rosa */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0 0 40px #45f3ff, 0 0 40px #ff2770;
+}
+
+/* Títulos */
+h1,
+h2 {
+  color: #e7e9ea;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 0 0 10px #45f3ff, 0 0 10px #ff2770;
+  /* glow en títulos */
+}
+
+/* Botones estilo pill con degradado y glow */
+.btn {
+  background: linear-gradient(45deg, #45f3ff, #ff2770);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 15px #45f3ff, 0 0 15px #ff2770;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #45f3ff, 0 0 25px #ff2770;
+}
+
+/* Contenedor de botones */
+.menu-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form textarea {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #2f3336;
+  border-radius: 8px;
+  padding: 12px;
+  color: #e7e9ea;
+  box-shadow: 0 0 10px #45f3ff, 0 0 10px #ff2770;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #ff2770;
+  box-shadow: 0 0 20px #45f3ff, 0 0 20px #ff2770;
+}
+
+/* Secciones */
+.section {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Posts estilo tarjeta con glow */
+.post {
+  background: rgba(30, 30, 30, 0.9);
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #45f3ff, 0 0 15px #ff2770;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.post:hover {
+  box-shadow: 0 0 25px #45f3ff, 0 0 25px #ff2770;
+}
+
+.post h3 {
+  margin: 0 0 5px;
+  color: #e7e9ea;
+}
+
+.post p {
+  margin: 0 0 10px;
+  color: #d9d9d9;
+}
+
+.post small {
+  color: #71767b;
+}
+
+/* Alertas con glow */
+.alert {
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 0 15px #45f3ff, 0 0 15px #ff2770;
+}
+
+.alert-success {
+  background: linear-gradient(45deg, #45f3ff, #ff2770);
+  color: #fff;
+  box-shadow: 0 0 20px #45f3ff, 0 0 20px #ff2770;
+}
+
+.alert-error {
+  background: linear-gradient(45deg, #ff2770, #45f3ff);
+  color: #fff;
+  box-shadow: 0 0 20px #45f3ff, 0 0 20px #ff2770;
+}
+
+/* Botón Logout - Estilo especial rojo/peligro */
+.btn-logout {
+  background: linear-gradient(45deg, #ff4757, #ff6348) !important;
+  box-shadow: 0 0 15px #ff4757, 0 0 15px #ff6348 !important;
+}
+
+.btn-logout:hover {
+  box-shadow: 0 0 25px #ff4757, 0 0 25px #ff6348 !important;
+}
+
+/* Botones pequeños para acciones de posts */
+.btn-small {
+  background: linear-gradient(45deg, #45f3ff, #ff2770);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px #45f3ff, 0 0 10px #ff2770;
+}
+
+.btn-small:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #45f3ff, 0 0 15px #ff2770;
+}
+
+.btn-delete {
+  background: linear-gradient(45deg, #ff4757, #ff6348) !important;
+  box-shadow: 0 0 10px #ff4757 !important;
+}
+
+.btn-delete:hover {
+  box-shadow: 0 0 15px #ff4757 !important;
+}
+
+.post-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Estilos para sección de censura */
+.censura-add-section {
+  margin-bottom: 20px;
+}
+
+.censura-input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.censura-input-group input {
+  flex: 1;
+}
+
+.censura-list-section {
+  margin-top: 20px;
+}
+
+.palabras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.loading-text {
+  text-align: center;
+  color: #71767b;
+  font-style: italic;
+}
+
+.hidden-btn {
+  display: none;
+}
+
+/* Comentarios - Sección expandible */
+.comments-section {
+  margin-top: 20px;
+  border-top: 1px solid #2f3336;
+  padding-top: 15px;
+}
+
+.comments-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.comments-header:hover {
+  background-color: rgba(69, 243, 255, 0.1);
+}
+
+.comments-toggle {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  color: #45f3ff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.comments-toggle.open {
+  transform: rotate(90deg);
+}
+
+.comments-title {
+  color: #45f3ff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.comments-container {
+  margin-top: 10px;
+  padding: 15px;
+  background: rgba(69, 243, 255, 0.05);
+  border-left: 3px solid #45f3ff;
+  border-radius: 8px;
+}
+
+.comments-container.hidden {
+  display: none;
+}
+
+.comments-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.comment-item {
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 3px solid #ff2770;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comment-user {
+  color: #45f3ff;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.comment-date {
+  color: #71767b;
+  font-size: 11px;
+}
+
+.comment-delete {
+  background: none;
+  border: none;
+  color: #ff2770;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.comment-delete:hover {
+  color: #ff1a5e;
+}
+
+.comment-content {
+  color: #e7e9ea;
+  font-size: 13px;
+}
+
+.new-comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #2f3336;
+  padding-top: 10px;
+}
+
+.comment-input {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #45f3ff;
+  color: #e7e9ea;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  font-family: inherit;
+  min-height: 60px;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: #ff2770;
+  box-shadow: 0 0 10px rgba(255, 39, 112, 0.3);
+}
