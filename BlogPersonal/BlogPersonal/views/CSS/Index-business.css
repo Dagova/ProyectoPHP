@@ -1,0 +1,347 @@
+/* =========================
+   Tema Empresarial (madera + grises)
+========================= */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #fdfdf9;
+  /* fondo blanco cálido */
+  color: #2c2c2c;
+  /* texto gris oscuro */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Títulos */
+h1,
+h2 {
+  color: #3e3e3e;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Botones estilo empresarial */
+.btn {
+  background: linear-gradient(45deg, #8d6e63, #a1887f);
+  /* tonos madera */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: linear-gradient(45deg, #6d4c41, #8d6e63);
+  /* más oscuro al hover */
+}
+
+/* Contenedor de botones */
+.menu-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Formularios */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form textarea {
+  background: #f9f9f9;
+  border: 1px solid #b0b0b0;
+  border-radius: 6px;
+  padding: 10px;
+  color: #2c2c2c;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #8d6e63;
+  /* madera */
+}
+
+/* Secciones */
+.section {
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Posts estilo tarjeta */
+.post {
+  background: #f5f5f5;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #d0d0d0;
+  color: #2c2c2c;
+}
+
+.post h3 {
+  margin: 0 0 5px;
+  color: #3e3e3e;
+}
+
+.post p {
+  margin: 0 0 10px;
+  color: #4f4f4f;
+}
+
+.post small {
+  color: #7a7a7a;
+}
+
+/* Alertas */
+.alert {
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.alert-success {
+  background: #c8e6c9;
+  /* verde suave */
+  color: #2e7d32;
+}
+
+.alert-error {
+  background: #ffcdd2;
+  /* rojo suave */
+  color: #c62828;
+}
+
+/* Botón Logout - Estilo especial rojo/peligro */
+.btn-logout {
+  background: linear-gradient(45deg, #d32f2f, #c62828) !important;
+}
+
+.btn-logout:hover {
+  background: linear-gradient(45deg, #b71c1c, #d32f2f) !important;
+}
+
+/* Botones pequeños para acciones de posts */
+.btn-small {
+  background: linear-gradient(45deg, #8d6e63, #a1887f);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-small:hover {
+  transform: scale(1.05);
+}
+
+.btn-delete {
+  background: linear-gradient(45deg, #e57373, #ef5350) !important;
+}
+
+.btn-delete:hover {
+  background: linear-gradient(45deg, #ef5350, #f44336) !important;
+}
+
+.post-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Estilos para sección de censura */
+.censura-add-section {
+  margin-bottom: 20px;
+}
+
+.censura-input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.censura-input-group input {
+  flex: 1;
+}
+
+.censura-list-section {
+  margin-top: 20px;
+}
+
+.palabras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.loading-text {
+  text-align: center;
+  color: #7a7a7a;
+  font-style: italic;
+}
+
+.hidden-btn {
+  display: none;
+}
+
+/* Comentarios - Sección expandible */
+.comments-section {
+  margin-top: 20px;
+  border-top: 1px solid #d0d0d0;
+  padding-top: 15px;
+}
+
+.comments-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.comments-header:hover {
+  background-color: #f0f0f0;
+}
+
+.comments-toggle {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  color: #2c5aa0;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.comments-toggle.open {
+  transform: rotate(90deg);
+}
+
+.comments-title {
+  color: #2c5aa0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.comments-container {
+  margin-top: 10px;
+  padding: 15px;
+  background: #f5f5f5;
+  border-left: 3px solid #2c5aa0;
+  border-radius: 8px;
+}
+
+.comments-container.hidden {
+  display: none;
+}
+
+.comments-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.comment-item {
+  background: #ffffff;
+  border-left: 3px solid #c85911;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.comment-user {
+  color: #2c5aa0;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.comment-date {
+  color: #7a7a7a;
+  font-size: 11px;
+}
+
+.comment-delete {
+  background: none;
+  border: none;
+  color: #c85911;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.comment-delete:hover {
+  color: #a03d0a;
+}
+
+.comment-content {
+  color: #2c2c2c;
+  font-size: 13px;
+}
+
+.new-comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #d0d0d0;
+  padding-top: 10px;
+}
+
+.comment-input {
+  background: #ffffff;
+  border: 1px solid #2c5aa0;
+  color: #2c2c2c;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 13px;
+  font-family: inherit;
+  min-height: 60px;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: #c85911;
+  box-shadow: 0 0 10px rgba(200, 89, 17, 0.2);
+}
